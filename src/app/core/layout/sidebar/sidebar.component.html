@@ -1,8 +1,11 @@
 <div
   id="sidebar-wrapper"
-  class="h-screen w-full left-full lg:w-1/6 absolute lg:left-0 bg-red-500"
+  class="h-screen w-full left-full lg:w-1/6 fixed p-4 lg:left-0 bg-surface-200"
 >
-  <button (click)="toggleSidebar()" class="text-white">Toggle Sidebar</button>
-
-  <div id="sidebar-content"></div>
+  <div
+    id="sidebar-content"
+    class="h-full p-4 bg-surface-500 rounded-sm shadow-xl"
+  >
+    <button (click)="toggleSidebar()" class="text-white">Toggle Sidebar</button>
+  </div>
 </div>
