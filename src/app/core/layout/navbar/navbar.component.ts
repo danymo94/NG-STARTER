@@ -1,15 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LayoutService } from '../../layout/layout.service';
+import { LayoutService } from '../layout.service';
 
 @Component({
-  selector: 'sidebar-component',
+  selector: 'navbar-component',
   imports: [],
-  templateUrl: './sidebar.component.html',
+  templateUrl: './navbar.component.html',
 })
-export class SideBarComponent {
+export class NavBarComponent {
   layoutService = inject(LayoutService);
-
   constructor() {}
 
   toggleSidebar() {
