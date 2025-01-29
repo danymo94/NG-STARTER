@@ -14,7 +14,6 @@ import { RoleService } from './role.service';
  * Service to handle authentication and user management.
  */
 export class AuthService {
-  private apiUrl = 'https://api.example.com/auth';
   private token = signal<string | null>(null);
   private role = signal<'admin' | 'partner' | null>(null);
   private user = signal<Admin | Partner | null>(null);
@@ -49,7 +48,7 @@ export class AuthService {
   async login(email: string, password: string): Promise<void> {
     try {
       const response = await firstValueFrom(this.http.post<ApiResponse<{ token: string; role: 'admin' | 'partner' }>>(
-        `${this.apiUrl}/login`, { email, password }
+        `/login`, { email, password }
       ));
 
       if (response.status === 200 && response.data) {
@@ -71,7 +70,7 @@ export class AuthService {
   async registerAdmin(admin: Admin): Promise<void> {
     try {
       const response = await firstValueFrom(this.http.post<ApiResponse<{ token: string; role: 'admin' }>>(
-        `${this.apiUrl}/register/admin`, admin
+        `/register`, admin
       ));
 
       if (response.status === 201 && response.data) {
@@ -93,7 +92,7 @@ export class AuthService {
   async registerPartner(partner: Partner): Promise<void> {
     try {
       const response = await firstValueFrom(this.http.post<ApiResponse<{ token: string; role: 'partner' }>>(
-        `${this.apiUrl}/register/partner`, partner
+        `/partner/register`, partner
       ));
 
       if (response.status === 201 && response.data) {
@@ -113,7 +112,7 @@ export class AuthService {
    */
   async fetchUser(): Promise<void> {
     try {
-      const response = await firstValueFrom(this.http.get<ApiResponse<Admin | Partner>>(`${this.apiUrl}/me`));
+      const response = await firstValueFrom(this.http.get<ApiResponse<Admin | Partner>>(`/me`));
 
       if (response.status === 200 && response.data) {
         this.user.set(response.data);

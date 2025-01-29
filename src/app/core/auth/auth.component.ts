@@ -16,6 +16,7 @@ import { IftaLabelModule } from 'primeng/iftalabel';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { ButtonModule } from 'primeng/button';
+import { ConfirmDialogService } from './../services/confirm.service';
 
 @Component({
   selector: 'app-auth',
@@ -44,6 +45,7 @@ export class AuthComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private authService = inject(AuthService);
+  private confirmDialogService = inject(ConfirmDialogService);
 
   /**
    * Initializes the component and sets up the form based on the route
@@ -109,8 +111,11 @@ export class AuthComponent implements OnInit {
    * Submits the authentication form, either registering or logging in the user
    */
   async submitForm() {
-    console.log('Submitting form:', this.authForm.value);
     if (this.authForm.invalid) return;
+
+   /**  const confirmed = await this.confirmDialogService.confirm().toPromise();
+    if (!confirmed) return; **/
+
     this.isLoading.set(true);
     this.errorMessage.set(null);
 
