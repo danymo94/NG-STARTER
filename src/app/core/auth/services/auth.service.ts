@@ -1,5 +1,9 @@
 import { Injectable, Signal, signal, inject } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpClientModule,
+  HttpHeaders,
+} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ApiResponse } from '../../models/api-response.model';
 import { Admin, Partner } from '../user.model';
@@ -17,6 +21,7 @@ export class AuthService {
   private token = signal<string | null>(null);
   private role = signal<'admin' | 'partner' | null>(null);
   private user = signal<Admin | Partner | null>(null);
+  private partners = signal<Partner[] | null>(null);
 
   private http = inject(HttpClient);
   private router = inject(Router);
@@ -47,11 +52,13 @@ export class AuthService {
    */
   async login(email: string, password: string): Promise<void> {
     try {
-      const response = await firstValueFrom(this.http.post<ApiResponse<{ token: string; role: 'admin' | 'partner' }>>(
-        `/login`, { email, password }
-      ));
+      const response = await firstValueFrom(
+        this.http.post<
+          ApiResponse<{ token: string; role: 'admin' | 'partner' }>
+        >(`/login`, { email, password })
+      );
 
-      if (response.status === 200 && response.data) {
+      if (response.code === 200 && response.data) {
         this.token.set(response.data.token);
         this.role.set(response.data.role);
         this.jwtService.saveToken(response.data.token);
@@ -69,15 +76,25 @@ export class AuthService {
    */
   async registerAdmin(admin: Admin): Promise<void> {
     try {
-      const response = await firstValueFrom(this.http.post<ApiResponse<{ token: string; role: 'admin' }>>(
-        `/register`, admin
-      ));
+      const { secretKey, ...adminData } = admin;
+      const headers = secretKey
+        ? new HttpHeaders({ 'x-secret-key': secretKey })
+        : undefined;
 
-      if (response.status === 201 && response.data) {
+      const response = await firstValueFrom(
+        this.http.post<ApiResponse<{ token: string; role: 'admin' }>>(
+          `/register`,
+          adminData,
+          { headers }
+        )
+      );
+      console.log(response.code);
+      console.log(response.data);
+      if (response.code == 201 && response.data) {
         this.token.set(response.data.token);
-        this.role.set('admin');
+        this.role.set(response.data.role);
         this.jwtService.saveToken(response.data.token);
-        this.roleService.setRole('admin');
+        this.roleService.setRole(response.data.role);
         await this.fetchUser();
       }
     } catch (error) {
@@ -91,11 +108,14 @@ export class AuthService {
    */
   async registerPartner(partner: Partner): Promise<void> {
     try {
-      const response = await firstValueFrom(this.http.post<ApiResponse<{ token: string; role: 'partner' }>>(
-        `/partner/register`, partner
-      ));
+      const response = await firstValueFrom(
+        this.http.post<ApiResponse<{ token: string; role: 'partner' }>>(
+          `/partners/register`,
+          partner
+        )
+      );
 
-      if (response.status === 201 && response.data) {
+      if (response.code === 201 && response.data) {
         this.token.set(response.data.token);
         this.role.set('partner');
         this.jwtService.saveToken(response.data.token);
@@ -112,15 +132,42 @@ export class AuthService {
    */
   async fetchUser(): Promise<void> {
     try {
-      const response = await firstValueFrom(this.http.get<ApiResponse<Admin | Partner>>(`/me`));
+      const response = await firstValueFrom(
+        this.http.get<ApiResponse<Admin | Partner>>(`/me`)
+      );
 
-      if (response.status === 200 && response.data) {
+      if (response.code === 200 && response.data) {
         this.user.set(response.data);
       }
     } catch (error) {
       console.error('Fetch user error:', error);
       this.logout();
     }
+  }
+
+  /**
+   * Fetches all partners data from the server.
+   */
+  async fetchPartners(): Promise<void> {
+    try {
+      const response = await firstValueFrom(
+        this.http.get<ApiResponse<Partner[]>>(`/partners`)
+      );
+
+      if (response.code === 200 && response.data) {
+        this.partners.set(response.data);
+      }
+    } catch (error) {
+      console.error('Fetch partners error:', error);
+    }
+  }
+
+  /**
+   * Gets the current partners data.
+   * @returns The current partners data.
+   */
+  get currentPartners(): Signal<Partner[] | null> {
+    return this.partners;
   }
 
   /**

@@ -22,16 +22,19 @@ export class RoleGuard implements CanActivate {
    */
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const role = this.authService.userRole();
+    const url = state.url;
 
+    // Allow access to login and register routes for unregistered users
     if (!role) {
+      if (url === '/login' || url === '/register') {
+        return true;
+      }
       this.router.navigate(['/login']);
       return false;
     }
 
-    const url = state.url;
-
-    // If the user tries to access /login, redirect them to the correct dashboard
-    if (url === '/login') {
+    // If the user tries to access /login or /register, redirect them to the correct dashboard
+    if (url === '/login' || url === '/register') {
       this.router.navigate([role === 'admin' ? '/admin' : '/partner']);
       return false;
     }
