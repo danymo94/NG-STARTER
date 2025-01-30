@@ -1,6 +1,3 @@
-import { ApplicationConfig } from '@angular/core';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { providePrimeNG } from 'primeng/config';
 import Lara from '@primeng/themes/lara';
 import { definePreset } from '@primeng/themes';
 
@@ -391,24 +388,20 @@ export const basePreset = definePreset(Lara, {
     overlay: {
       select: {
         borderRadius: '{border.radius.md}',
-        shadow:
-          '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
+        shadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
       },
       popover: {
         borderRadius: '{border.radius.md}',
         padding: '0.75rem',
-        shadow:
-          '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
+        shadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
       },
       modal: {
         borderRadius: '{border.radius.xl}',
         padding: '1.25rem',
-        shadow:
-          '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+        shadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
       },
       navigation: {
-        shadow:
-          '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
+        shadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
       },
     },
     colorScheme: {
@@ -1380,10 +1373,8 @@ export const basePreset = definePreset(Lara, {
           },
           outlined: {
             primary: {
-              hoverBackground:
-                'color-mix(in srgb, {primary.color}, transparent 96%)',
-              activeBackground:
-                'color-mix(in srgb, {primary.color}, transparent 84%)',
+              hoverBackground: 'color-mix(in srgb, {primary.color}, transparent 96%)',
+              activeBackground: 'color-mix(in srgb, {primary.color}, transparent 84%)',
               borderColor: '{primary.700}',
               color: '{primary.color}',
             },
@@ -1394,40 +1385,32 @@ export const basePreset = definePreset(Lara, {
               color: '{surface.400}',
             },
             success: {
-              hoverBackground:
-                'color-mix(in srgb, {green.400}, transparent 96%)',
-              activeBackground:
-                'color-mix(in srgb, {green.400}, transparent 84%)',
+              hoverBackground: 'color-mix(in srgb, {green.400}, transparent 96%)',
+              activeBackground: 'color-mix(in srgb, {green.400}, transparent 84%)',
               borderColor: '{green.700}',
               color: '{green.400}',
             },
             info: {
               hoverBackground: 'color-mix(in srgb, {sky.400}, transparent 96%)',
-              activeBackground:
-                'color-mix(in srgb, {sky.400}, transparent 84%)',
+              activeBackground: 'color-mix(in srgb, {sky.400}, transparent 84%)',
               borderColor: '{sky.700}',
               color: '{sky.400}',
             },
             warn: {
-              hoverBackground:
-                'color-mix(in srgb, {orange.400}, transparent 96%)',
-              activeBackground:
-                'color-mix(in srgb, {orange.400}, transparent 84%)',
+              hoverBackground: 'color-mix(in srgb, {orange.400}, transparent 96%)',
+              activeBackground: 'color-mix(in srgb, {orange.400}, transparent 84%)',
               borderColor: '{orange.700}',
               color: '{orange.400}',
             },
             help: {
-              hoverBackground:
-                'color-mix(in srgb, {purple.400}, transparent 96%)',
-              activeBackground:
-                'color-mix(in srgb, {purple.400}, transparent 84%)',
+              hoverBackground: 'color-mix(in srgb, {purple.400}, transparent 96%)',
+              activeBackground: 'color-mix(in srgb, {purple.400}, transparent 84%)',
               borderColor: '{purple.700}',
               color: '{purple.400}',
             },
             danger: {
               hoverBackground: 'color-mix(in srgb, {red.400}, transparent 96%)',
-              activeBackground:
-                'color-mix(in srgb, {red.400}, transparent 84%)',
+              activeBackground: 'color-mix(in srgb, {red.400}, transparent 84%)',
               borderColor: '{red.700}',
               color: '{red.400}',
             },
@@ -1446,10 +1429,8 @@ export const basePreset = definePreset(Lara, {
           },
           text: {
             primary: {
-              hoverBackground:
-                'color-mix(in srgb, {primary.color}, transparent 96%)',
-              activeBackground:
-                'color-mix(in srgb, {primary.color}, transparent 84%)',
+              hoverBackground: 'color-mix(in srgb, {primary.color}, transparent 96%)',
+              activeBackground: 'color-mix(in srgb, {primary.color}, transparent 84%)',
               color: '{primary.color}',
             },
             secondary: {
@@ -1458,36 +1439,28 @@ export const basePreset = definePreset(Lara, {
               color: '{surface.400}',
             },
             success: {
-              hoverBackground:
-                'color-mix(in srgb, {green.400}, transparent 96%)',
-              activeBackground:
-                'color-mix(in srgb, {green.400}, transparent 84%)',
+              hoverBackground: 'color-mix(in srgb, {green.400}, transparent 96%)',
+              activeBackground: 'color-mix(in srgb, {green.400}, transparent 84%)',
               color: '{green.400}',
             },
             info: {
               hoverBackground: 'color-mix(in srgb, {sky.400}, transparent 96%)',
-              activeBackground:
-                'color-mix(in srgb, {sky.400}, transparent 84%)',
+              activeBackground: 'color-mix(in srgb, {sky.400}, transparent 84%)',
               color: '{sky.400}',
             },
             warn: {
-              hoverBackground:
-                'color-mix(in srgb, {orange.400}, transparent 96%)',
-              activeBackground:
-                'color-mix(in srgb, {orange.400}, transparent 84%)',
+              hoverBackground: 'color-mix(in srgb, {orange.400}, transparent 96%)',
+              activeBackground: 'color-mix(in srgb, {orange.400}, transparent 84%)',
               color: '{orange.400}',
             },
             help: {
-              hoverBackground:
-                'color-mix(in srgb, {purple.400}, transparent 96%)',
-              activeBackground:
-                'color-mix(in srgb, {purple.400}, transparent 84%)',
+              hoverBackground: 'color-mix(in srgb, {purple.400}, transparent 96%)',
+              activeBackground: 'color-mix(in srgb, {purple.400}, transparent 84%)',
               color: '{purple.400}',
             },
             danger: {
               hoverBackground: 'color-mix(in srgb, {red.400}, transparent 96%)',
-              activeBackground:
-                'color-mix(in srgb, {red.400}, transparent 84%)',
+              activeBackground: 'color-mix(in srgb, {red.400}, transparent 84%)',
               color: '{red.400}',
             },
             contrast: {
@@ -1660,8 +1633,7 @@ export const basePreset = definePreset(Lara, {
         background: '{content.background}',
         borderRadius: '{border.radius.xl}',
         color: '{content.color}',
-        shadow:
-          '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)',
+        shadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)',
       },
       body: {
         padding: '1.25rem',
@@ -1964,8 +1936,7 @@ export const basePreset = definePreset(Lara, {
       },
       footer: {
         gap: '0.5rem',
-        padding:
-          '0 {overlay.popover.padding} {overlay.popover.padding} {overlay.popover.padding}',
+        padding: '0 {overlay.popover.padding} {overlay.popover.padding} {overlay.popover.padding}',
       },
     },
     contextmenu: {
@@ -2238,12 +2209,10 @@ export const basePreset = definePreset(Lara, {
         fontWeight: '600',
       },
       content: {
-        padding:
-          '0 {overlay.modal.padding} {overlay.modal.padding} {overlay.modal.padding}',
+        padding: '0 {overlay.modal.padding} {overlay.modal.padding} {overlay.modal.padding}',
       },
       footer: {
-        padding:
-          '0 {overlay.modal.padding} {overlay.modal.padding} {overlay.modal.padding}',
+        padding: '0 {overlay.modal.padding} {overlay.modal.padding} {overlay.modal.padding}',
         gap: '0.5rem',
       },
     },
@@ -2305,8 +2274,7 @@ export const basePreset = definePreset(Lara, {
         fontWeight: '600',
       },
       content: {
-        padding:
-          '0 {overlay.modal.padding} {overlay.modal.padding} {overlay.modal.padding}',
+        padding: '0 {overlay.modal.padding} {overlay.modal.padding} {overlay.modal.padding}',
       },
       footer: {
         padding: '{overlay.modal.padding}',
@@ -2685,43 +2653,37 @@ export const basePreset = definePreset(Lara, {
             background: 'color-mix(in srgb, {blue.50}, transparent 5%)',
             borderColor: '{blue.200}',
             color: '{blue.600}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)',
           },
           success: {
             background: 'color-mix(in srgb, {green.50}, transparent 5%)',
             borderColor: '{green.200}',
             color: '{green.600}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)',
           },
           warn: {
             background: 'color-mix(in srgb,{yellow.50}, transparent 5%)',
             borderColor: '{yellow.200}',
             color: '{yellow.600}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)',
           },
           error: {
             background: 'color-mix(in srgb, {red.50}, transparent 5%)',
             borderColor: '{red.200}',
             color: '{red.600}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)',
           },
           secondary: {
             background: '{surface.100}',
             borderColor: '{surface.200}',
             color: '{surface.600}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)',
           },
           contrast: {
             background: '{surface.900}',
             borderColor: '{surface.950}',
             color: '{surface.50}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)',
           },
         },
         dark: {
@@ -2729,43 +2691,37 @@ export const basePreset = definePreset(Lara, {
             background: 'color-mix(in srgb, {blue.500}, transparent 84%)',
             borderColor: 'color-mix(in srgb, {blue.700}, transparent 64%)',
             color: '{blue.500}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)',
           },
           success: {
             background: 'color-mix(in srgb, {green.500}, transparent 84%)',
             borderColor: 'color-mix(in srgb, {green.700}, transparent 64%)',
             color: '{green.500}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)',
           },
           warn: {
             background: 'color-mix(in srgb, {yellow.500}, transparent 84%)',
             borderColor: 'color-mix(in srgb, {yellow.700}, transparent 64%)',
             color: '{yellow.500}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)',
           },
           error: {
             background: 'color-mix(in srgb, {red.500}, transparent 84%)',
             borderColor: 'color-mix(in srgb, {red.700}, transparent 64%)',
             color: '{red.500}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)',
           },
           secondary: {
             background: '{surface.800}',
             borderColor: '{surface.700}',
             color: '{surface.300}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)',
           },
           contrast: {
             background: '{surface.0}',
             borderColor: '{surface.100}',
             color: '{surface.950}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)',
           },
         },
       },
@@ -3257,8 +3213,7 @@ export const basePreset = definePreset(Lara, {
             background: 'color-mix(in srgb, {blue.50}, transparent 5%)',
             borderColor: '{blue.200}',
             color: '{blue.600}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)',
             closeButton: {
               hoverBackground: '{blue.100}',
               focusRing: {
@@ -3278,8 +3233,7 @@ export const basePreset = definePreset(Lara, {
             background: 'color-mix(in srgb, {green.50}, transparent 5%)',
             borderColor: '{green.200}',
             color: '{green.600}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)',
             closeButton: {
               hoverBackground: '{green.100}',
               focusRing: {
@@ -3299,8 +3253,7 @@ export const basePreset = definePreset(Lara, {
             background: 'color-mix(in srgb,{yellow.50}, transparent 5%)',
             borderColor: '{yellow.200}',
             color: '{yellow.600}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)',
             closeButton: {
               hoverBackground: '{yellow.100}',
               focusRing: {
@@ -3320,8 +3273,7 @@ export const basePreset = definePreset(Lara, {
             background: 'color-mix(in srgb, {red.50}, transparent 5%)',
             borderColor: '{red.200}',
             color: '{red.600}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)',
             closeButton: {
               hoverBackground: '{red.100}',
               focusRing: {
@@ -3341,8 +3293,7 @@ export const basePreset = definePreset(Lara, {
             background: '{surface.100}',
             borderColor: '{surface.200}',
             color: '{surface.600}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)',
             closeButton: {
               hoverBackground: '{surface.200}',
               focusRing: {
@@ -3362,8 +3313,7 @@ export const basePreset = definePreset(Lara, {
             background: '{surface.900}',
             borderColor: '{surface.950}',
             color: '{surface.50}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)',
             closeButton: {
               hoverBackground: '{surface.800}',
               focusRing: {
@@ -3385,8 +3335,7 @@ export const basePreset = definePreset(Lara, {
             background: 'color-mix(in srgb, {blue.500}, transparent 84%)',
             borderColor: 'color-mix(in srgb, {blue.700}, transparent 64%)',
             color: '{blue.500}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)',
             closeButton: {
               hoverBackground: 'rgba(255, 255, 255, 0.05)',
               focusRing: {
@@ -3406,8 +3355,7 @@ export const basePreset = definePreset(Lara, {
             background: 'color-mix(in srgb, {green.500}, transparent 84%)',
             borderColor: 'color-mix(in srgb, {green.700}, transparent 64%)',
             color: '{green.500}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)',
             closeButton: {
               hoverBackground: 'rgba(255, 255, 255, 0.05)',
               focusRing: {
@@ -3427,8 +3375,7 @@ export const basePreset = definePreset(Lara, {
             background: 'color-mix(in srgb, {yellow.500}, transparent 84%)',
             borderColor: 'color-mix(in srgb, {yellow.700}, transparent 64%)',
             color: '{yellow.500}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)',
             closeButton: {
               hoverBackground: 'rgba(255, 255, 255, 0.05)',
               focusRing: {
@@ -3448,8 +3395,7 @@ export const basePreset = definePreset(Lara, {
             background: 'color-mix(in srgb, {red.500}, transparent 84%)',
             borderColor: 'color-mix(in srgb, {red.700}, transparent 64%)',
             color: '{red.500}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)',
             closeButton: {
               hoverBackground: 'rgba(255, 255, 255, 0.05)',
               focusRing: {
@@ -3469,8 +3415,7 @@ export const basePreset = definePreset(Lara, {
             background: '{surface.800}',
             borderColor: '{surface.700}',
             color: '{surface.300}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)',
             closeButton: {
               hoverBackground: '{surface.700}',
               focusRing: {
@@ -3490,8 +3435,7 @@ export const basePreset = definePreset(Lara, {
             background: '{surface.0}',
             borderColor: '{surface.100}',
             color: '{surface.950}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)',
             closeButton: {
               hoverBackground: '{surface.100}',
               focusRing: {
@@ -4088,8 +4032,7 @@ export const basePreset = definePreset(Lara, {
           hoverBackground: '{content.background}',
           width: '16px',
           height: '16px',
-          shadow:
-            '0px 0.5px 0px 0px rgba(0, 0, 0, 0.08), 0px 1px 1px 0px rgba(0, 0, 0, 0.14)',
+          shadow: '0px 0.5px 0px 0px rgba(0, 0, 0, 0.08), 0px 1px 1px 0px rgba(0, 0, 0, 0.14)',
         },
         focusRing: {
           width: '{focus.ring.width}',
@@ -4191,8 +4134,7 @@ export const basePreset = definePreset(Lara, {
         fontSize: '1.143rem',
         fontWeight: '500',
         borderRadius: '50%',
-        shadow:
-          '0px 0.5px 0px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12)',
+        shadow: '0px 0.5px 0px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12)',
       },
       steppanels: {
         padding: '0.875rem 0.5rem 1.125rem 0.5rem',
@@ -4238,8 +4180,7 @@ export const basePreset = definePreset(Lara, {
         fontSize: '1.143rem',
         fontWeight: '500',
         borderRadius: '50%',
-        shadow:
-          '0px 0.5px 0px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12)',
+        shadow: '0px 0.5px 0px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12)',
       },
     },
     tabmenu: {
@@ -4355,8 +4296,7 @@ export const basePreset = definePreset(Lara, {
         },
         dark: {
           navButton: {
-            shadow:
-              '0px 0px 10px 50px color-mix(in srgb, {content.background}, transparent 50%)',
+            shadow: '0px 0px 10px 50px color-mix(in srgb, {content.background}, transparent 50%)',
           },
         },
       },
@@ -4393,8 +4333,7 @@ export const basePreset = definePreset(Lara, {
         },
         dark: {
           navButton: {
-            shadow:
-              '0px 0px 10px 50px color-mix(in srgb, {content.background}, transparent 50%)',
+            shadow: '0px 0px 10px 50px color-mix(in srgb, {content.background}, transparent 50%)',
           },
         },
       },
@@ -4593,8 +4532,7 @@ export const basePreset = definePreset(Lara, {
           borderRadius: '50%',
           size: '0.375rem',
           background: '{primary.color}',
-          insetShadow:
-            '0px 0.5px 0px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12)',
+          insetShadow: '0px 0.5px 0px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12)',
         },
       },
       eventConnector: {
@@ -4635,8 +4573,7 @@ export const basePreset = definePreset(Lara, {
       content: {
         left: '0.25rem',
         top: '0.25rem',
-        checkedShadow:
-          '0px 1px 2px 0px rgba(0, 0, 0, 0.02), 0px 1px 2px 0px rgba(0, 0, 0, 0.04)',
+        checkedShadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.02), 0px 1px 2px 0px rgba(0, 0, 0, 0.04)',
       },
       colorScheme: {
         light: {
@@ -5037,8 +4974,7 @@ export const basePreset = definePreset(Lara, {
             borderColor: '{blue.200}',
             color: '{blue.600}',
             detailColor: '{surface.700}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)',
             closeButton: {
               hoverBackground: '{blue.100}',
               focusRing: {
@@ -5052,8 +4988,7 @@ export const basePreset = definePreset(Lara, {
             borderColor: '{green.200}',
             color: '{green.600}',
             detailColor: '{surface.700}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)',
             closeButton: {
               hoverBackground: '{green.100}',
               focusRing: {
@@ -5067,8 +5002,7 @@ export const basePreset = definePreset(Lara, {
             borderColor: '{yellow.200}',
             color: '{yellow.600}',
             detailColor: '{surface.700}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)',
             closeButton: {
               hoverBackground: '{yellow.100}',
               focusRing: {
@@ -5082,8 +5016,7 @@ export const basePreset = definePreset(Lara, {
             borderColor: '{red.200}',
             color: '{red.600}',
             detailColor: '{surface.700}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)',
             closeButton: {
               hoverBackground: '{red.100}',
               focusRing: {
@@ -5097,8 +5030,7 @@ export const basePreset = definePreset(Lara, {
             borderColor: '{surface.200}',
             color: '{surface.600}',
             detailColor: '{surface.700}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)',
             closeButton: {
               hoverBackground: '{surface.200}',
               focusRing: {
@@ -5112,8 +5044,7 @@ export const basePreset = definePreset(Lara, {
             borderColor: '{surface.950}',
             color: '{surface.50}',
             detailColor: '{surface.0}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)',
             closeButton: {
               hoverBackground: '{surface.800}',
               focusRing: {
@@ -5130,8 +5061,7 @@ export const basePreset = definePreset(Lara, {
             borderColor: 'color-mix(in srgb, {blue.700}, transparent 64%)',
             color: '{blue.500}',
             detailColor: '{surface.0}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {blue.500}, transparent 96%)',
             closeButton: {
               hoverBackground: 'rgba(255, 255, 255, 0.05)',
               focusRing: {
@@ -5145,8 +5075,7 @@ export const basePreset = definePreset(Lara, {
             borderColor: 'color-mix(in srgb, {green.700}, transparent 64%)',
             color: '{green.500}',
             detailColor: '{surface.0}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {green.500}, transparent 96%)',
             closeButton: {
               hoverBackground: 'rgba(255, 255, 255, 0.05)',
               focusRing: {
@@ -5160,8 +5089,7 @@ export const basePreset = definePreset(Lara, {
             borderColor: 'color-mix(in srgb, {yellow.700}, transparent 64%)',
             color: '{yellow.500}',
             detailColor: '{surface.0}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {yellow.500}, transparent 96%)',
             closeButton: {
               hoverBackground: 'rgba(255, 255, 255, 0.05)',
               focusRing: {
@@ -5175,8 +5103,7 @@ export const basePreset = definePreset(Lara, {
             borderColor: 'color-mix(in srgb, {red.700}, transparent 64%)',
             color: '{red.500}',
             detailColor: '{surface.0}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {red.500}, transparent 96%)',
             closeButton: {
               hoverBackground: 'rgba(255, 255, 255, 0.05)',
               focusRing: {
@@ -5190,8 +5117,7 @@ export const basePreset = definePreset(Lara, {
             borderColor: '{surface.700}',
             color: '{surface.300}',
             detailColor: '{surface.0}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {surface.500}, transparent 96%)',
             closeButton: {
               hoverBackground: '{surface.700}',
               focusRing: {
@@ -5205,8 +5131,7 @@ export const basePreset = definePreset(Lara, {
             borderColor: '{surface.100}',
             color: '{surface.950}',
             detailColor: '{surface.950}',
-            shadow:
-              '0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)',
+            shadow: '0px 4px 8px 0px color-mix(in srgb, {surface.950}, transparent 96%)',
             closeButton: {
               hoverBackground: '{surface.100}',
               focusRing: {

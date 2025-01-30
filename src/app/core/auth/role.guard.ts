@@ -3,7 +3,7 @@ import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import { AuthService } from './services/auth.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 /**
  * Guard to check user role and restrict access to routes based on the role.
@@ -11,7 +11,7 @@ import { AuthService } from './services/auth.service';
 export class RoleGuard implements CanActivate {
   constructor(
     private authService: AuthService = inject(AuthService),
-    private router: Router = inject(Router)
+    private router: Router = inject(Router),
   ) {}
 
   /**
@@ -40,10 +40,7 @@ export class RoleGuard implements CanActivate {
     }
 
     // Ensure the user accesses only the routes for their role
-    if (
-      (role === 'admin' && !url.startsWith('/admin')) ||
-      (role === 'partner' && !url.startsWith('/partner'))
-    ) {
+    if ((role === 'admin' && !url.startsWith('/admin')) || (role === 'partner' && !url.startsWith('/partner'))) {
       this.router.navigate([role === 'admin' ? '/admin' : '/partner']);
       return false;
     }

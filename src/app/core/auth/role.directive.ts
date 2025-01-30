@@ -1,13 +1,13 @@
-import { Directive, TemplateRef, ViewContainerRef, inject } from '@angular/core';
+import { Directive, TemplateRef, ViewContainerRef, inject, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
 
 @Directive({
-  selector: '[ifAdmin]'
+  selector: '[ifAdmin]',
 })
 /**
  * Directive to conditionally display content for admin users.
  */
-export class IfAdminDirective {
+export class IfAdminDirective implements OnInit {
   private templateRef: TemplateRef<any> = inject(TemplateRef);
   private viewContainer: ViewContainerRef = inject(ViewContainerRef);
   private authService: AuthService = inject(AuthService);
@@ -23,12 +23,12 @@ export class IfAdminDirective {
 }
 
 @Directive({
-  selector: '[ifPartner]'
+  selector: '[ifPartner]',
 })
 /**
  * Directive to conditionally display content for partner users.
  */
-export class IfPartnerDirective {
+export class IfPartnerDirective implements OnInit {
   private templateRef: TemplateRef<any> = inject(TemplateRef);
   private viewContainer: ViewContainerRef = inject(ViewContainerRef);
   private authService: AuthService = inject(AuthService);

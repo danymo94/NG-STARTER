@@ -1,9 +1,5 @@
 import { Injectable, Signal, signal, inject } from '@angular/core';
-import {
-  HttpClient,
-  HttpClientModule,
-  HttpHeaders,
-} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ApiResponse } from '../../models/api-response.model';
 import { Admin, Partner } from '../user.model';
@@ -53,9 +49,7 @@ export class AuthService {
   async login(email: string, password: string): Promise<void> {
     try {
       const response = await firstValueFrom(
-        this.http.post<
-          ApiResponse<{ token: string; role: 'admin' | 'partner' }>
-        >(`/login`, { email, password })
+        this.http.post<ApiResponse<{ token: string; role: 'admin' | 'partner' }>>(`/login`, { email, password }),
       );
 
       if (response.code === 200 && response.data) {
@@ -77,16 +71,10 @@ export class AuthService {
   async registerAdmin(admin: Admin): Promise<void> {
     try {
       const { secretKey, ...adminData } = admin;
-      const headers = secretKey
-        ? new HttpHeaders({ 'x-secret-key': secretKey })
-        : undefined;
+      const headers = secretKey ? new HttpHeaders({ 'x-secret-key': secretKey }) : undefined;
 
       const response = await firstValueFrom(
-        this.http.post<ApiResponse<{ token: string; role: 'admin' }>>(
-          `/register`,
-          adminData,
-          { headers }
-        )
+        this.http.post<ApiResponse<{ token: string; role: 'admin' }>>(`/register`, adminData, { headers }),
       );
       console.log(response.code);
       console.log(response.data);
@@ -109,10 +97,7 @@ export class AuthService {
   async registerPartner(partner: Partner): Promise<void> {
     try {
       const response = await firstValueFrom(
-        this.http.post<ApiResponse<{ token: string; role: 'partner' }>>(
-          `/partners/register`,
-          partner
-        )
+        this.http.post<ApiResponse<{ token: string; role: 'partner' }>>(`/partners/register`, partner),
       );
 
       if (response.code === 201 && response.data) {
@@ -132,9 +117,7 @@ export class AuthService {
    */
   async fetchUser(): Promise<void> {
     try {
-      const response = await firstValueFrom(
-        this.http.get<ApiResponse<Admin | Partner>>(`/me`)
-      );
+      const response = await firstValueFrom(this.http.get<ApiResponse<Admin | Partner>>(`/me`));
 
       if (response.code === 200 && response.data) {
         this.user.set(response.data);
@@ -150,9 +133,7 @@ export class AuthService {
    */
   async fetchPartners(): Promise<void> {
     try {
-      const response = await firstValueFrom(
-        this.http.get<ApiResponse<Partner[]>>(`/partners`)
-      );
+      const response = await firstValueFrom(this.http.get<ApiResponse<Partner[]>>(`/partners`));
 
       if (response.code === 200 && response.data) {
         this.partners.set(response.data);

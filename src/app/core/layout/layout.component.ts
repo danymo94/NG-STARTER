@@ -1,8 +1,7 @@
 import { MainComponent } from './main/main.component';
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { LayoutService } from './layout.service';
-import { NavBarComponent } from "./navbar/navbar.component";
+import { NavBarComponent } from './navbar/navbar.component';
 
 @Component({
   selector: 'layout-component',
@@ -13,7 +12,7 @@ export class LayoutComponent implements OnInit {
   constructor(private layoutService: LayoutService) {}
 
   ngOnInit() {
-    this.layoutService.sidebarOpen$.subscribe(isOpen => {
+    this.layoutService.sidebarOpen$.subscribe((isOpen) => {
       this.onSidebarStateChange(isOpen);
     });
   }

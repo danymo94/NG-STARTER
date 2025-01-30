@@ -2,13 +2,10 @@ import { Directive, HostListener } from '@angular/core';
 import { NgControl } from '@angular/forms';
 
 @Directive({
-  selector: '[formControlName][inputUppercase]'
+  selector: '[formControlName][inputUppercase]',
 })
 export class InputUppercaseDirective {
-
-  constructor(
-    private readonly control: NgControl
-  ) { }
+  constructor(private readonly control: NgControl) {}
 
   @HostListener('input', ['$event.target'])
   public onInput(input: HTMLInputElement): void {

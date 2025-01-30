@@ -1,19 +1,21 @@
 <div
-  class=" text-primary-500 z-30 absolute bg-surface-50 w-screen h-20 flex justify-start items-center rounded-sm shadow-2xl"
+  class="absolute z-30 flex h-20 w-screen items-center justify-start rounded-sm bg-surface-50 text-primary-500 shadow-2xl"
 >
   <div
-    class="flex justify-between px-6 lg:px-0 lg:justify-center items-center gap-2 bg-surface-60 h-full w-full lg:w-1/6"
+    class="bg-surface-60 flex h-full w-full items-center justify-between gap-2 px-6 lg:w-1/6 lg:justify-center lg:px-0"
   >
-    <button (click)="toggleSidebar()" class="">
+    <button
+      class=""
+      (click)="toggleSidebar()"
+    >
       <i class="pi pi-bars"></i>
     </button>
     <p class="text-2xl">LOGO</p>
-    <button class=" lg:hidden">
-      <i class="pi pi-search"></i></button>
+    <button class="lg:hidden">
+      <i class="pi pi-search"></i>
+    </button>
   </div>
-  <div
-    class="bg-surface-50 px-4 w-5/6 justify-end items-center gap-2 h-full hidden lg:flex"
-  >
+  <div class="hidden h-full w-5/6 items-center justify-end gap-2 bg-surface-50 px-4 lg:flex">
     <button class="">
       <i class="pi pi-bell"></i>
     </button>

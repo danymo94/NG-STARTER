@@ -1,7 +1,7 @@
-import { Injectable } from "@angular/core";
-import {jwtDecode} from "jwt-decode";
+import { Injectable } from '@angular/core';
+import { jwtDecode } from 'jwt-decode';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 /**
  * Service to manage JWT tokens in local storage.
  */
@@ -11,7 +11,7 @@ export class JwtService {
    * @returns The JWT token or null if not found.
    */
   getToken(): string | null {
-    return window.localStorage.getItem("token");
+    return window.localStorage.getItem('token');
   }
 
   /**
@@ -19,14 +19,14 @@ export class JwtService {
    * @param token The JWT token to save.
    */
   saveToken(token: string): void {
-    window.localStorage.setItem("token", token);
+    window.localStorage.setItem('token', token);
   }
 
   /**
    * Removes the JWT token from local storage.
    */
   destroyToken(): void {
-    window.localStorage.removeItem("token");
+    window.localStorage.removeItem('token');
   }
 
   /**

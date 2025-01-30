@@ -1,6 +1,6 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 /**
  * Service to manage user roles in local storage.
  */
@@ -10,7 +10,7 @@ export class RoleService {
    * @returns The user role or null if not found.
    */
   getRole(): Role | null {
-    return window.localStorage.getItem("role") as Role | null;
+    return window.localStorage.getItem('role') as Role | null;
   }
 
   /**
@@ -18,14 +18,14 @@ export class RoleService {
    * @param role The user role to set.
    */
   setRole(role: Role): void {
-    window.localStorage.setItem("role", role);
+    window.localStorage.setItem('role', role);
   }
 
   /**
    * Removes the user role from local storage.
    */
   destroyRole(): void {
-    window.localStorage.removeItem("role");
+    window.localStorage.removeItem('role');
   }
 }
 

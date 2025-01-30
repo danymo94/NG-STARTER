@@ -1,11 +1,6 @@
 import { InputUppercaseDirective } from './../directives/uppercase.directive';
-import { Component, OnInit, Signal, signal, inject } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { Component, OnInit, signal, inject } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AuthService } from '../auth/services/auth.service';
 import { CommonModule } from '@angular/common';
@@ -32,7 +27,7 @@ import { ConfirmDialogService } from './../services/confirm.service';
     InputGroupModule,
     InputGroupAddonModule,
     ButtonModule,
-    InputUppercaseDirective
+    InputUppercaseDirective,
   ],
 })
 export class AuthComponent implements OnInit {
@@ -67,42 +62,15 @@ export class AuthComponent implements OnInit {
     });
 
     if (this.isRegister()) {
-      this.authForm.addControl(
-        'fullName',
-        this.fb.control('', Validators.required)
-      );
-      this.authForm.addControl(
-        'businessName',
-        this.fb.control('', Validators.required)
-      );
-      this.authForm.addControl(
-        'secretKey',
-        this.fb.control('', Validators.required)
-      );
-      this.authForm.addControl(
-        'phone',
-        this.fb.control('', Validators.required)
-      );
-      this.authForm.addControl(
-        'address',
-        this.fb.control('', Validators.required)
-      );
-      this.authForm.addControl(
-        'vatNumber',
-        this.fb.control('', Validators.required)
-      );
-      this.authForm.addControl(
-        'fiscalCode',
-        this.fb.control('', Validators.required)
-      );
-      this.authForm.addControl(
-        'sdiCode',
-        this.fb.control('', Validators.required)
-      );
-      this.authForm.addControl(
-        'pecAddress',
-        this.fb.control('', Validators.required)
-      );
+      this.authForm.addControl('fullName', this.fb.control('', Validators.required));
+      this.authForm.addControl('businessName', this.fb.control('', Validators.required));
+      this.authForm.addControl('secretKey', this.fb.control('', Validators.required));
+      this.authForm.addControl('phone', this.fb.control('', Validators.required));
+      this.authForm.addControl('address', this.fb.control('', Validators.required));
+      this.authForm.addControl('vatNumber', this.fb.control('', Validators.required));
+      this.authForm.addControl('fiscalCode', this.fb.control('', Validators.required));
+      this.authForm.addControl('sdiCode', this.fb.control('', Validators.required));
+      this.authForm.addControl('pecAddress', this.fb.control('', Validators.required));
       this.authForm.addControl('website', this.fb.control(''));
     }
   }
@@ -113,7 +81,7 @@ export class AuthComponent implements OnInit {
   async submitForm() {
     if (this.authForm.invalid) return;
 
-   /**  const confirmed = await this.confirmDialogService.confirm().toPromise();
+    /**  const confirmed = await this.confirmDialogService.confirm().toPromise();
     if (!confirmed) return; **/
 
     this.isLoading.set(true);
@@ -123,10 +91,7 @@ export class AuthComponent implements OnInit {
       if (this.isRegister()) {
         await this.authService.registerAdmin(this.authForm.value);
       } else {
-        await this.authService.login(
-          this.authForm.value.email,
-          this.authForm.value.password
-        );
+        await this.authService.login(this.authForm.value.email, this.authForm.value.password);
       }
     } catch (error: any) {
       this.errorMessage.set(error.message || 'An error occurred');
