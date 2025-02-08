@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,5 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'bistro-net-dashboard';
+  title = 'ng-starter';
 }
