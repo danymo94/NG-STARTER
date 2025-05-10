@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { LayoutService } from '../layout.service';
 
 @Component({

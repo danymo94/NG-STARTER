@@ -6,5 +6,4 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   templateUrl: './content.component.html',
 })
-export class ContentComponent {
-}
+export class ContentComponent {}
